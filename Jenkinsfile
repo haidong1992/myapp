@@ -35,7 +35,7 @@ pipeline {
                 sh """
                     docker run -d \
                         --name ${CONTAINER_NAME} \
-                        -p ${PORT}:8081 \
+                        -p ${PORT}:${PORT}\
                         ${IMAGE_NAME}:${BUILD_NUMBER}
                 """
             }

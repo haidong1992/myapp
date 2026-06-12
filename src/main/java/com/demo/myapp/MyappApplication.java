@@ -14,6 +14,6 @@ public class MyappApplication {
 	}
 	@GetMapping("/hello")
 	public String hello() {
-		return "Hello，Jenkins CI/CD 部署成功！";
+		return "Hello，Jenkins CI/CD 部署成功！v2";
 	}
 }
