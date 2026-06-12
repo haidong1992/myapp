@@ -11,7 +11,7 @@ pipeline {
 
         stage('拉取代码') {
             steps {
-                git branch: 'main',
+                git branch: 'master',
                     url: 'https://github.com/haidong1992/myapp.git'
             }
         }
