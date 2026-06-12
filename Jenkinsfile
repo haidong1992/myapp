@@ -4,7 +4,7 @@ pipeline {
     environment {
         IMAGE_NAME = "myapp"
         CONTAINER_NAME = "myapp-container"
-        PORT = "8080"
+        PORT = "8081"
     }
 
     stages {
@@ -35,7 +35,7 @@ pipeline {
                 sh """
                     docker run -d \
                         --name ${CONTAINER_NAME} \
-                        -p ${PORT}:8080 \
+                        -p ${PORT}:8081 \
                         ${IMAGE_NAME}:${BUILD_NUMBER}
                 """
             }
