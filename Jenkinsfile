@@ -46,8 +46,7 @@ pipeline {
         success {
             echo "✅ 部署成功！访问 http://localhost:${PORT}/hello 验证"
                  echo "分支：${GIT_BRANCH}"        // origin/master
-                            echo "commitID：${GIT_COMMIT}"    // def456...
-                            echo "提交者：${GIT_AUTHOR_NAME}" // haidong1992
+                 echo "提交者：${GIT_AUTHOR_NAME}" // haidong1992
         }
         failure {
             echo "❌ 构建失败，请查看日志"
