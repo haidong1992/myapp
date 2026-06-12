@@ -4,17 +4,10 @@ pipeline {
     environment {
         IMAGE_NAME = "myapp"
         CONTAINER_NAME = "myapp-container"
-        PORT = "8081"
+        PORT = "8080"
     }
 
     stages {
-
-        stage('拉取代码') {
-            steps {
-                git branch: 'master',
-                    url: 'https://github.com/haidong1992/myapp.git'
-            }
-        }
 
         stage('Maven 打包') {
             steps {
@@ -42,7 +35,7 @@ pipeline {
                 sh """
                     docker run -d \
                         --name ${CONTAINER_NAME} \
-                        -p ${PORT}:8081 \
+                        -p ${PORT}:8080 \
                         ${IMAGE_NAME}:${BUILD_NUMBER}
                 """
             }
